@@ -1,0 +1,27 @@
+{
+  "name": "streakly-infrastructure",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "jest",
+    "synth": "cdk synth",
+    "deploy": "cdk deploy --all",
+    "diff": "cdk diff"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.150.0",
+    "cdk-nag": "^3.1.0",
+    "constructs": "^10.3.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/node": "^20.14.0",
+    "aws-cdk": "^2.150.0",
+    "esbuild": "^0.23.0",
+    "jest": "^30.5.2",
+    "ts-jest": "^29.4.15",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.0"
+  }
+}
