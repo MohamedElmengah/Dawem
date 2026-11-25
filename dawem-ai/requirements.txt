@@ -1,0 +1,27 @@
+# Python 3.11+ required (StrEnum, typing.Self).
+# Lower bounds only; pin exact versions with `pip freeze` once the stack is installed and tested.
+
+# --- Core contracts & config ---
+pydantic>=2.9
+python-dotenv>=1.0
+
+# --- LLM providers ---
+google-genai>=1.0            # Gemini (primary). NOT the deprecated `google-generativeai`.
+groq>=0.11                   # Groq fallback (GroqProvider, AsyncGroq client)
+
+# --- RAG ---
+chromadb>=0.5                # local, zero-cost vector store for dev/tests
+pypdf>=4.0                   # PDF loading with per-page metadata
+sentence-transformers>=3.0   # local embeddings (pulls in torch: large first install)
+
+# --- AWS (S3 ingestion: POST /files/index-s3; imported lazily) ---
+boto3>=1.34
+
+# --- API surface (only to expose endpoints to the team backend) ---
+fastapi>=0.110
+uvicorn[standard]>=0.29
+python-multipart>=0.0.9      # required by FastAPI for the /files/index upload endpoint
+
+# --- Tests ---
+pytest>=8.0
+httpx>=0.27                   # FastAPI TestClient (tests/test_api.py)
